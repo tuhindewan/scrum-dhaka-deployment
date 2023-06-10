@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  scrum-dhaka
+  namespace: demo
+spec:
+  selector:
+    matchLabels:
+      app: scrum-dhaka
+  template:
+    metadata:
+      labels:
+        app: scrum-dhaka
+    spec:
+      containers:
+        - name: scrum-dhaka
+          image: tuhinsshadow/scrum-dhaka:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
